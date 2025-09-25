@@ -1,8 +1,9 @@
-package user.model;
+package org.minibank.user.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.validator.constraints.UniqueElements;
 
 @Entity
 @Table(name = "users")
@@ -19,6 +20,7 @@ public class User {
     @Column(nullable = false)
     String login;
     @Column(unique = true, nullable = false)
+    @UniqueElements
     String email;
     @Column(nullable = false)
     String password;
